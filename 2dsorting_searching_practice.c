@@ -168,18 +168,22 @@ int binarysearch (int arr[], int n, int l, int r){
 void binary2d (int rows, int cols, int arr[rows][cols], int n){
 	int left = 0; int right = (rows*cols)-1;
 	while (left <= right){
+		// calculate new middle each iteration
 		int mid = left + (right - left)/2;
 		
 		int row = mid/cols; // Convert 1D index to 2D row index
 		int col = mid%cols; // Convert 1D index to 2D col index
 		
+		// if middle 2d value is equal to the target, print it then return
 		if (arr[row][col] == n){
 			printf("The number %d is located at index [%d][%d]", arr[row][col], row, col);
 			return;
 		} 
+		//if target is more than the middle 2d value, then shift the left or lowest index to middle + 1
 		else if (n > arr[row][col]){
 			left = mid+1;
 		}
+		//if target is more than the middle 2d value, then shift the right or highest to middle - 1
 		else if (n < arr[row][col]){
 			right = mid-1;
 		}
