@@ -30,7 +30,7 @@ int main (){
 		printf("Factors are: ");
 		for (int j = 1; j<=num; j++){
 			if(num % j == 0){
-				printf("%d", j);
+				printf("%d ", j);
 			}
 		}
 		printf("\n");
